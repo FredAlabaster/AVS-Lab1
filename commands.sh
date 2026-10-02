@@ -1,6 +1,7 @@
+# Лабораторная работа №1: Вариант 13
 
 
-#1
+# ======= 3aдание 1 =======
 mkdir ~/lab0
 cd ~/lab0
 
@@ -32,11 +33,11 @@ cd ..
 cd cold_station
 touch fish_order
 
-cd ../..
+cd ..
+cd ..
 cd office
 touch vika_payment
-cd ../..
-
+cd ..
 
 
 cat > ~/lab0/claude_monet/warehouse/stock_list <<'EOF'
@@ -100,9 +101,7 @@ cat > ~/lab0/delivery_call <<'EOF'
 EOF
 
 
-
-
-#2
+# ======= 3aдание 2 =======
 chmod 755 ~/lab0/claude_monet
 chmod u=rwx,g=rx,o=--- claude_monet/warehouse
 chmod 640 claude_monet/warehouse/stock_list
@@ -123,7 +122,7 @@ chmod 640 claude_monet/office/vika_payment
 chmod u=rw,g=r,o=--- delivery_call
 
 
-#3
+# ======= 3aдание 3 =======
 cp ~/lab0/delivery_call ~/lab0/claude_monet/office/call_copy
 
 cp -r ~/lab0/claude_monet/fish_delivery ~/lab0/claude_monet/warehouse/fish_backup
@@ -141,7 +140,7 @@ cat ~/lab0/claude_monet/warehouse/rejection_log >> ~/lab0/claude_monet/kitchen/h
 mv ~/lab0/claude_monet/kitchen/cold_station/fish_order ~/lab0/claude_monet/office/urgent_fish_order
 
 
-#4
+# ======= 3aдание 4 =======
 ls -lR ~/lab0 | grep '^-' | grep -v 'copy' | sort -k5 -n | tail -5
 
 cat ~/lab0/claude_monet/*/* ~/lab0/claude_monet/*/*/* 2>/dev/null | grep -i 'поставщик\|продукт' | grep -v -i 'утром' | sort | head -6
@@ -157,7 +156,7 @@ find ~/lab0 -type f -links 2 -printf '%i %p\n' | sort -n
 ls -lR ~/lab0 | grep '^l' | sort -k9 | tail -1
 
 
-#5
+# ======= 3aдание 5 =======
 rm claude_monet/office/call_copy
 rm stock_link
 rm claude_monet/kitchen/warehouse_access
